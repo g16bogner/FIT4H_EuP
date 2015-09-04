@@ -1,0 +1,14 @@
+a. Legen Sie eine neue Datei studio_game.rb an
+b. speichern Sie in der Variable name1 den Wert 'larry'
+c. speichern Sie in der Variable health den Wert 60
+d. geben Sie auf der Konsole: 'larry's health is 60' , unter Verwendung der Variablen aus (2 Versionen)
+e. verdreifachen Sie den Wert von larrys health
+f. reduzieren Sie die health durch eine Division durch 9. Geben Sie eine Variante mit float und eine mit integer aus
+g. erzeugen Sie folgende Ausgabe:
+	Players:
+		larry
+		curly
+		moe
+h. speichern sie die Namen der Spieler in Variablen und geben Sie diese erneut wie abgebildet aus
+
+
