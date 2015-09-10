@@ -17,3 +17,7 @@ Formatieren der Ausgabe:
 	puts "Die Woche besteht aus:\n\tMontag\n\tFreitag."
 	# \n fügt einen Zeilenzumbruch hinzu
 	# \t fügt einen Tabulatorschritt hinzu
+
+Zeichen escapen
+	puts "Anzeigen von \" muss das Zeichen escapt werden"
+	#Sollen bestimmte Zeichen wie doppelte oder einfache Anführungszeichen im Text dargestellt werden, dann muss ein Backslash vor diesem Zeichen stehen.
