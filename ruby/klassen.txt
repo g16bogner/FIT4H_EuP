@@ -26,7 +26,7 @@ Instanzvariable:
 
 Eigenschaften:
 	Instanzvariablen sind in den meisten Fällen auch Eigenschaften, die das Objekt charakterisieren.
-	Wenn ich einen Eigenschaft ausgeben möchte (von außen auf die Eigenschaft zugreifen), dann muss ich eine Methode schreiben, die genauso wie die Eigenschaft heißt.
+	Wenn ich eine Eigenschaft ausgeben möchte (von außen auf die Eigenschaft zugreifen), dann muss ich eine Methode schreiben, die genauso wie die Eigenschaft heißt.
 	bsp.:
 	Instanzvariable: @title
 	Eigenschaft: title
@@ -34,5 +34,18 @@ Eigenschaften:
 		def title
 			@title
 		end
+		Kurzfform (Shortcut): attr_reader :title
 	Nun kann ich mit dem Objekt auf die eigenschaft title zugreifen:	
 		object1.title
+
+	Soll von außen auf die Eigenschaft title zugegriffen werden, dann ist ein WRITER nötig.
+	Writer-Methode:
+		def title=(parameter)
+			@title = paramter.capitalize
+		end
+		Kurzform: attr_writer :title
+	Nun kann für diese Eigenschaft ein neuer Wert zugewiesen werden.
+		object1.title = "Neuer Wert"
+
+	Kurz-kurz-Form: wenn sowohl ein Reader als auch ein Writer benötigt wird:
+		attr_accessor :title

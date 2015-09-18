@@ -1,0 +1,6 @@
+a. machen Sie aus der Instanzvariablen @health ein lesbares Attribut
+b. geben Sie die Eigenschaft health des Objektes player1 aus
+c. die Eigenschaft name soll sowohl lesbar, als auch schreibbar sein
+d. erzeugen Sie ein virtuelles Attribut score, das den Wert von health addiert mit der Buchstabenlaenge des name -Attributes
+e. aendern Sie die to_s - Methode, zur Ausgabe des Score
+
