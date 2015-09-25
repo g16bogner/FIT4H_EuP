@@ -1,3 +1,14 @@
+class Game
+
+	def initialize(title)
+		@title = title
+		@players = []
+	end 
+	def add_player(player)
+		@players << player
+	end
+end
+
 class Player
 	attr_reader :health
 	attr_accessor :name
@@ -26,16 +37,18 @@ class Player
 end
 player1 = Player.new('Theo', 5)
 player2 = Player.new('Peter')
-players = [player1, player2]
+game = Game.new('Freitag')
+game.add_player(player1)
+#players = [player1, player2]
 
-players.each do |var|
-	var.blam
-	puts var
-end
+# players.each do |var|
+# 	var.blam
+# 	puts var
+# end
 
-players.size.times do |i|
-	puts i.to_s
-	puts players[i]
-end
+# players.size.times do |i|
+# 	puts i.to_s
+# 	puts players[i]
+# end
 
 
