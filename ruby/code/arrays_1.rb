@@ -15,6 +15,7 @@
 	my_array.each do |val|
 		my_hash[val] = rand(100..200)
 	end
+	
 	#puts my_hash
 # d. Geben Sie diesen Hash anschließen etwa so aus: Index: 15 - Wert: 121
 	# my_hash.each do |myKey, myVal|
