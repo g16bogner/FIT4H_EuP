@@ -1,0 +1,24 @@
+Erstellen Sie einen Controller mit der Bezeichnung movies
+
+Erstellen Sie ein Route zur index-Action des movies-Controllers
+
+Erstellen Sie eine INDEX-Action
+
+Erstellen Sie ein index-Template zur AUsgabe von:
+<h1>Movies</h1>
+<ul>
+  <li>Iron Man</li>
+  <li>Superman</li>
+  <li>Spider-Man</li>
+</ul>
+
+Dynamisieren Sie die AUsgabe mit einem Array @movies im Controller
+
+
+
+Hausaufgabe:
+If you don't yet have an idea in mind for a Rails app, here's an idea: start creating a fundraising app. It can be used to raise funds for start-up projects, community projects, personal projects, or the like. For inspiration, check out Kickstarter, Pledgie, gofundme, or indiegogo. 
+To get started, create a new app (call it crowdfund, for example) with an index page that dynamically displays a list of project names when you browse to http://localhost:3000/projects. You'll need the following ingredients:
+- a route that maps requests for /projects to the index action of a controller called projects
+- a ProjectsController with an index action that sets up the project names
+- a view template for the index action that displays all the project names
