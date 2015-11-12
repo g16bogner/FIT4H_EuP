@@ -1,3 +1,5 @@
+Erstellen Sie ein neues Projekt: flix
+
 Erstellen Sie einen Controller mit der Bezeichnung movies
 
 Erstellen Sie ein Route zur index-Action des movies-Controllers
