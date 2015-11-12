@@ -1,0 +1,9 @@
+Erzeugen Sie eine Migration für das model movie mit den Spalten: title:string rating:string total_gross:decimal
+
+Überprüfen Sie die change-Methode der Migration
+
+Erzeugen Sie die Tabelle ,movies' mit dem rake-Command
+
+Erstellen Sie mit Hilfe der Console 3 movies:
+superman, ironman, spiderman mit einer Bewertung und einem geschätzten Umsatz
+
