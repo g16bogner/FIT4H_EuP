@@ -7,3 +7,4 @@ Erzeugen Sie die Tabelle ,movies' mit dem rake-Command
 Erstellen Sie mit Hilfe der Console 3 movies:
 superman, ironman, spiderman mit einer Bewertung und einem geschätzten Umsatz
 
+Ändern Sie den Controller und die View, sodass die Daten aus der Datenbank geladen werden.

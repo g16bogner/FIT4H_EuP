@@ -1,9 +1,21 @@
 <h1>Events</h1>
-<%= "<h2>listing generated at:  #{Time.now}</h2>".html_safe %>
-<p>
-	<ul>
+<p>Zeige folgende <%= @events.size %>an:
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Ort</th>
+			<th>Preis</th>
+			<th>wann</th>
+			<th>Beschreibung</th>
+		</tr>
 		<% @events.each do |event| %>
-			<li><%= event %></li>
+			<tr>
+				<td><%= event.name %></td>
+				<td><%= event.location %></td>
+				<td><%= number_to_currency(event.price, unit: "€ ") %></td>
+				<td><%= event.start_at %></td>
+				<td><%= event.description %></td>
+			</tr>
 		<% end %>
-	</ul>
+	</table>
 </p>
