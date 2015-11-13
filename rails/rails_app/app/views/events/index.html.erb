@@ -1,6 +1,6 @@
 <h1>Events</h1>
-<p>Zeige folgende <%= @events.size %>an:
-	<table>
+<p>Zeige folgende <%= @events.size %> Events an:
+	<table width="100%">
 		<tr>
 			<th>Name</th>
 			<th>Ort</th>
@@ -12,9 +12,9 @@
 			<tr>
 				<td><%= event.name %></td>
 				<td><%= event.location %></td>
-				<td><%= number_to_currency(event.price, unit: "€ ") %></td>
+				<td><%= format_price(event) %></td>
 				<td><%= event.start_at %></td>
-				<td><%= event.description %></td>
+				<td><%= truncate(event.description, length: 25, separator: ' ') %></td>
 			</tr>
 		<% end %>
 	</table>
