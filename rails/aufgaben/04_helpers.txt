@@ -1,0 +1,8 @@
+Aufgaben:
+
+Gestalten Sie die AUsgabe der Movies smarter.
+- die SIngular- und Pluralform von Movies soll automatisiert erscheinen
+- Die Movie-Beschreibung soll bei 40 Zeichen abgeschnitten werden
+- Bei weniger als 50 MIO $ Umsatz soll das Wort Flop! angezeigt werden
+- Das Movie-Release_datum soll in einem deutschen Format angzeigt werden.
+
