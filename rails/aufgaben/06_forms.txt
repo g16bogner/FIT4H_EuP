@@ -1,0 +1,13 @@
+Erstellen Sie für die Movie-App
+  Route
+  COntroller
+  View
+zur Erstellung eines FOrmulars zum Editieren der Movie-Daten.
+
+Sorgen Sie dafür, dass der neue Datensatz in der Datenbank gespeichert wird und der CLient die geänderten Daten sehen kann.
+
+Implementieren Sie die Möglichkeit einen neuen Datensatz einzugeben.
+
+Lagern Sie das Formular in einem Partial aus.
+
+Erstellen Sie einen Link zur Möglichkeit einen Film zu löschen.

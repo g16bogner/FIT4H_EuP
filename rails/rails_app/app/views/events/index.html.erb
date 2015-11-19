@@ -1,4 +1,5 @@
 <h1>Events</h1>
+<p><%= link_to "Neuen Event erstellen", new_event_path %></p>
 <p>Zeige folgende <%= @events.size %> Events an:
 	<table width="100%">
 		<tr>
@@ -9,6 +10,7 @@
 			<th>Beschreibung </th>
 			<th>Show</th>
 			<th>Edit</th>
+			<th>Del</th>
 		</tr>
 		<% @events.each do |event| %>
 			<tr>
@@ -22,6 +24,7 @@
 				</td>
 				<td><%= link_to "Show", event_path(event.id) %></td>
 				<td><%= link_to "Edit", edit_event_path(event.id) %></td>
+				<td><%= link_to "Delete", event_path(event.id), method: :delete, data: {confirm: "Sicher????"} %></td>
 			</tr>
 		<% end %>
 	</table>
