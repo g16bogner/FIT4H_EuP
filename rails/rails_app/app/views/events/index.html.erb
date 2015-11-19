@@ -6,8 +6,9 @@
 			<th>Ort</th>
 			<th>Preis</th>
 			<th>wann</th>
-			<th>Beschreibung</th>
+			<th>Beschreibung </th>
 			<th>Show</th>
+			<th>Edit</th>
 		</tr>
 		<% @events.each do |event| %>
 			<tr>
@@ -15,8 +16,12 @@
 				<td><%= event.location %></td>
 				<td><%= format_price(event) %></td>
 				<td><%= event.start_at %></td>
-				<td><%= truncate(event.description, length: 25, separator: ' ') %></td>
+				<td>
+					<%= truncate(event.description, length: 25, separator: ' ', omission: "") %>
+					<%= link_to "...", event_path(event.id) %>
+				</td>
 				<td><%= link_to "Show", event_path(event.id) %></td>
+				<td><%= link_to "Edit", edit_event_path(event.id) %></td>
 			</tr>
 		<% end %>
 	</table>

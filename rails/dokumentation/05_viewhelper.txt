@@ -14,3 +14,8 @@ b. Definition im app/helpers/application_helper.rb:
 		...
 	end
 
+LINK_TO
+Die Verlinkung wird in Rails über den link_to -Helper realisiert
+	link_to "Alle anzeigen", events_path
+produziert den HTML-Code:
+	<a href="/events">Alle anzeigen</a>
