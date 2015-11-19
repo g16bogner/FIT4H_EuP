@@ -7,6 +7,7 @@
 			<th>Preis</th>
 			<th>wann</th>
 			<th>Beschreibung</th>
+			<th>Show</th>
 		</tr>
 		<% @events.each do |event| %>
 			<tr>
@@ -15,6 +16,7 @@
 				<td><%= format_price(event) %></td>
 				<td><%= event.start_at %></td>
 				<td><%= truncate(event.description, length: 25, separator: ' ') %></td>
+				<td><%= link_to "Show", event_path(event.id) %></td>
 			</tr>
 		<% end %>
 	</table>

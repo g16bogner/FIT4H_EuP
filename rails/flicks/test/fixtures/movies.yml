@@ -2,8 +2,18 @@
 
 one:
   title: MyString
-  rank: 1
+  rating: MyString
+  total_gross: 9.99
+  description: MyText
+  website: MyString
+  release: 2015-11-19 08:26:11
+  pledging: 2015-11-19 08:26:11
 
 two:
   title: MyString
-  rank: 1
+  rating: MyString
+  total_gross: 9.99
+  description: MyText
+  website: MyString
+  release: 2015-11-19 08:26:11
+  pledging: 2015-11-19 08:26:11

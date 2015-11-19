@@ -1,31 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Movies</h1>
-
+<h1>Movies</h1>
+<p>
+	Es <%= @movies.count == 1 ? " ist " : " sind " %> <%= "#{pluralize(@movies.count, "Movie")}" %> vorhanden.
+</p>
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Rank</th>
-      <th>Link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.rank %></td>
-        <td><%= link_to 'Youtube', movie.video_link, target: "blank" %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+	<tr>
+		<th>Titel</th>
+		<th>Beschreibung</th>
+		<th>Website</th>
+		<th>Rating</th>
+		<th>Erscheinungsdatum</th>
+		<th>Umsatz</th>
+		<th>Pledging</th>
+	</tr>
+	<% @movies.each do |movie| %>
+		<tr>
+			<td><%= movie.title %></td>
+			<td><%= truncate(movie.description, length: 40) %></td>
+			<td><%= movie.website %></td>
+			<td><%= movie.rating %></td>
+			<td><%= time_ago_in_words(movie.release) %></td>
+			<td><%= format_total_gross(movie) %></td>
+			<td><%= movie.pledging %></td>
+		</tr>
+	<% end %>
 </table>
-
-<br>
-
-<%= link_to 'New Movie', new_movie_path %>
