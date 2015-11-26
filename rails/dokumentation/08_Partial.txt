@@ -1,0 +1,13 @@
+Es ist ein Zile in Rails den Umfang von Dateien soweit zu minimieren, dass man möglichst auf einer Bildschrimseite alle wesentlichen Informationen hat.
+Ein weiteres Ziel ist es keinen Code doppelt zu schreiben (DRY: Dont repeat yourself)
+
+In den Views erfüllen Partials, also Auslagerungsdateien diese Funktion.
+
+Da das Formular für edit und new weitgehend identisch ist, wird der Code in eine eigene Datei ausgelagert.
+
+new.html.erb
+	<%= render "form" %>
+	#Der Rails-Interpreter sucht auf der gleichen Verzeichnisebene nach einer Datei mit dem Namen:
+	"_form.html.erb"
+
+	

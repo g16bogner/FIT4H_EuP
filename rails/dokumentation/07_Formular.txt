@@ -1,0 +1,30 @@
+Vorgänge:
+1. Neuanlegen eines Events
+	Aufruf der new-Action beim Formular öffnen
+	create-Action beim Speichern des Formulars
+	Routing:
+		new_event_path - Methode
+		event_path, method: post
+
+2. Editieren eines Events
+	Aufruf der edit - Action
+		edit_event_path(id)
+	update-Action: Speichern der Änderungen
+
+3. View-Bereich:
+	Im Ordner views, Unterordner events gibt es eine Datei new.html.erb und eine Datei edit.html.erb, die ein Partial aufrufen, in dem das eigentliche Formular definiert ist.
+
+4. Form-Helper
+	form_for - Anlegen eines Formulars
+		<%= form_for @event do |f| %> .... <% end %>
+	text_field - Einfaches Textfeld (1 Zeile)
+		<%= f.text_field :name %>
+	...
+
+5. Controller:
+	def create
+		@event = Event.new(event_params)
+	#event_params ist eine Methode im gleichen Controller. Diese Methode enthält alle erlaubten Parameter. Dies ist ein Rails-Sicherheitsfeature.
+		def event_params
+			params.require(:event).permit(:name, :description, :location, :price, :start_at)
+		end

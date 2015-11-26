@@ -1,26 +1,47 @@
 <%= form_for(@event) do |f| %>
-	<p>
-		<%= f.label :name %>:
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</p>
-	<p>
-		<%= f.label :location %>
-		<%= f.text_field :location %>
-	</p>
-	<p>
-		<%= f.label :price %>
-		<%= f.number_field :price %>
-	</p>
-	<p>
-		<%=f.label :start_at %>
-		<%=f.datetime_select :start_at %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :name %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.text_field :name %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :description %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.text_area :description %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :location %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.text_field :location %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :price %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.number_field :price %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-2 columns">
+			<%=f.label :start_at %>
+		</div>
+		<div class="medium-10 columns">
+			<%=f.datetime_select :start_at %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-2 columns"><%= f.submit %></div>
+		<div class="medium-10 columns">&nbsp;</div>
+	</div>
 
 <% end %>
