@@ -1,6 +1,6 @@
-<h1>Upcoming Events</h1>
+<h1>Alle Events</h1>
 <p><%= link_to "Neuen Event erstellen", new_event_path %></p>
-<p>Zeige folgende <%= @events.size %> Events an:</p>
+<p>Zeige folgende <%= @events.size %> Events an:
 	<table width="100%">
 		<tr>
 			<th>Name</th>
@@ -28,6 +28,4 @@
 			</tr>
 		<% end %>
 	</table>
-<p>
-	<%= link_to "Alle Events", showall_events_path, type: "button", class: "button success" %> 
 </p>
