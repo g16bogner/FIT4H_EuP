@@ -1,0 +1,18 @@
+<h1>Alle Registrierungen</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Über</th>
+		<th>Event</th>
+	</tr>
+	<% @registrations.each do |registration| %>
+		<tr>
+			<td><%= registration.name %></td>
+			<td><%= registration.email %></td>
+			<td><%= registration.how_heard %></td>
+			<td><%= registration.event_id %></td>
+		</tr>
+	<% end %>
+</table>

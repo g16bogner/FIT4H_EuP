@@ -1,6 +1,6 @@
 <h1><%= @event.name %></h1>
 
-<div class="flash">
+<div class="panel flash">
 	<%= flash[:notice] %>
 </div>
 <div class="panel">
@@ -37,10 +37,13 @@
 			Preis
 		</div>
 		<div class="medium-10 columns">
-			<%= format_price@event %>
+			<%= format_price @event %>
 		</div>
 	</div>
 </div>
 
 
-<p><%= link_to "Back", events_path %></p>
+<p>
+	<%= link_to "Back", events_path %><br />
+	<%= link_to "Regisiterierungen", event_registrations_path(@event.id) %>
+</p>
