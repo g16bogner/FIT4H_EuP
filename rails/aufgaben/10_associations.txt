@@ -1,0 +1,3 @@
+Erstellen Sie eine neue Resource review mit den Spalten: : name:string, stars: integer, comment:text und der Verbindung zur Movie-Tabelle.
+Erstellen Sie Validations für das review-model.
+Legen Sie auf der Console einen Review an, vebinden diesen mit einem Movie und testen Sie die Beziehung.
