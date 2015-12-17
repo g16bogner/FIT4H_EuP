@@ -1,0 +1,83 @@
+Aufgaben für Donnerstag und Freitag, 3. und 4. Dezember
+Im Fach Konfigurieren und Administrieren sollen Sie soweit kommen, dass Sie am 11.12. die Fragen von Netacad beantworten können. Dies zählt als eine Klassenarbeit.
+Im Fach Entwickeln und Programmieren kommt es darauf an, dass sich die Klasse einen gemeinsamen Stand erarbeitet; also vor allem, dass die Schüler mit geringen Programmierfähigkeiten zur Gruppe aufschließen. 
+Ich möchte in der letzten Woche vor den Ferien in EuP eine Klassenarbeit schreiben, die in einer praktischen Aufgabe den bisherigen Stand spiegelt.
+Hilfreich ist hier:
+a. vermeiden Sie Copy and Paste. Schreiben Sie den Code Zeile für Zeile
+b. wiederholen Sie die Aufgaben aus dem Projekt solange, bis Ihnen das MVC-Prinzip selbstverständlich geworden ist. Fangen Sie immer wieder von vorne an. Das Startprojekt: http://guides.rubyonrails.org/getting_started.html ist ebenfalls gut geeignet. Die dritte App 'Fundraising' wiederholt unsere Vorgehensweise.
+c. Wenn noch Zeit bleibt, dann machen Sie für Ihre Hausarbeit ein erstes Inhaltsverzeichnis. Sie sollten in den Weihnachtsferien mit Ihrer Hausarbeit ernsthaft beginnen.
+
+EuP: Eine dritte Applikation
+Start creating a fundraising app. It can be used to raise funds for start-up projects, community projects, personal projects, or the like. For inspiration, check out Kickstarter, Pledgie, gofundme, or indiegogo. 
+To get started, create a new app (call it crowdfund, for example) with an index page that dynamically displays a list of project names when you browse to http://localhost:3000/projects. You'll need the following ingredients:
+- a route that maps requests for /projects to the index action of a controller called projects
+- a ProjectsController with an index action that sets up the project names
+- a view template for the index action that displays all the project names
+If you're building the fundraising app, your next step is to store projects in the database. Each project needs to have the following fields (at a minimum):
+name as string
+description as text
+target_pledge_amount as  decimal
+Generate a Project model and use a database migration to create the projects database table. Then, inside of the Rails console, use the Project model to practice creating, reading, updating, and deleting projects. In the end, make sure you've created at least three projects in the database.
+Update the index page in the fundraising app to show all the project information that's currently in the database. Make sure to format the target pledge amount as currency.
+
+In addition to the existing fields, it makes sense that a project would also have a website URL (an external link to a different site) and the date when pledging ends. Use a migration to add the following fields (at a minimum) to the projects database table:
+website	string
+pledging_ends_on	date
+Then use the console to update the existing projects in the database to have values for those fields. Finally, change the index page to display the new project fields.
+
+Use view helpers to format the project information displayed on the index page as follows:
+
+Display the number of projects in the proper plural or singular form (e.g. "1 Project" or "3 Projects").
+
+Truncate the project description to 150 characters.
+
+If the date when pledging ends is in the future, display it as "10 days remaining", for example. If the date is in the past (the pledge window has expired), display it as "All Done!" in bold font. You'll need to write a custom helper for this one! Make sure to encapsulate the logic that determines if pledging has expired in an instance method of the Project model. To get today's date, you can use the Time.now method. To display how many days are remaining, you can use the built-in distance_of_time_in_words helper.
+
+It's that time in your fundraising app to create individual show pages for each project: http://localhost:3000/projects/1, http://localhost:3000/projects/2, and so on. See if you can implement that feature from memory, without looking at any of the steps above. :-)
+
+Add links between the project index and show pages so folks can navigate back and forth with ease. Don't hard-wire the links. Be sure to use named route methods and add a root route like the pros.
+
+In the fundraising app, you're ready to create a web interface for editing a project's information. Start by putting an "Edit" link on a project's detail page and when it's clicked show a pre-filled form with the current project information. 
+
+In the fundraising app, finish the web interface for editing a project's information. You know you're done with this feature when users can:
+
+    Click an "Edit" link on a project's detail page and get a pre-filled form with the current project information
+
+    Change the project's information in the form
+
+    Click an "Update Project" button to update the project in the database
+
+    See the project's detail page with the updated information
+    
+  
+Now it's time to allow users to create new projects. Here's the flow we want for our users:
+
+    Click an "Add New Project" link on the index page and get a blank form
+
+    Input their own project information in the form
+
+    Click the "Create Project" button to create the project in the database
+
+    See their sparkling-new project displayed on the show page
+    
+      Where would you use partials to remove view duplication in your fundraising app? Make sure all the specs still pass when you're done refactoring! 
+      
+      For the fundraising app, create a "Delete" link on the project's detail page that when clicked, deletes the project from the database and shows the project index page without that specific project.
+      
+      Use a custom query so that the project listing page only shows projects that are accepting pledges. In other words, if a project's pledge end date has already gone by, don't show it. For the project's that are listed, make sure to order them so that the project with the fewest number of days remaining is at the top of the list.
+      
+      
+  In your fundraising app, suppose you wanted to add the following fields for each project:
+  name  type
+  team_members  string
+  image_file_name   string
+
+  You want the image displayed on both the index and show pages, and the team members only displayed on the show page. And you'll need to be able to edit existing projects to include values for those fields, as well as creating new projects with an image and team members. 
+  
+  Use Foundation for the app-layout.
+  
+  Since your FUNdraising app is all about practicing and having FUN, let your creative side run wild. Move all of your current inline CSS styles (and add some new styles of your own) to stylesheet files in the app/assets/stylesheets directory. Be sure to get a little Sass-y along the way! 
+  
+  Add reasonable validations to the Project model in your fundraising app.
+Update the fundraising app to handle cases where users try to create or edit projects with invalid data. Display validation errors to help them fix the problem.  
+

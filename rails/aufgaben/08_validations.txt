@@ -1,0 +1,11 @@
+Aufgabe:
+ Fügen Sie die Spalten: poster image file, cast, director, duration hinzu und integrieren SIe diese in die App.
+
+Aufgaben:
+Die Felder title, released_on, and duration von Movie müssen eingegeben sein.
+Das description-Feld muss minimal 25 Zeichen aufweisen.
+Das total_gross-Feld soll ganzzahlig und größer oder gleich 0 sein.
+Das image_file_name-Feld endet auf  ".gif", ".jpg", oder ".png".
+Das rating-Feld  field must have one of the following values: "G", "PG", "PG-13", "R", or "NC-17"
+
+Ergänzen Sie Controller und View zur Anzeige der Fehler.
