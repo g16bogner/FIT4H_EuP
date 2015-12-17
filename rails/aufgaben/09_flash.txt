@@ -1,0 +1,4 @@
+Fügen Sie folgenden Flashmeldungen hinzu:
+    "Movie successfully updated!"
+    "Movie successfully created!"
+    "Movie successfully deleted!"
