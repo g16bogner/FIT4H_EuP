@@ -3,3 +3,8 @@ Erstellen Sie Validations für das review-model.
 Legen Sie auf der Console einen Review an, vebinden diesen mit einem Movie und testen Sie die Beziehung.
 
 Zeigen Sie die Reviews abhängig vom jeweiligen Movie an.
+
+Geben Sie dem Benutzer Ihrer Movie-App die Möglichkeit ein Movie zu bewerten.
+
+Refactorieren Sie die Error-Messages und die Flash-Messages. Entfernen Sie Dopplungen aus Ihrem Code.
+
