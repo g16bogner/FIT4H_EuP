@@ -1,0 +1,10 @@
+Aufgaben
+1.  Schreiben Sie für Projects die Actions und legen Sie im Views/projects Ordner die entsprechenden Dateien an, so dass Sie alle existierenden Projekte anzeigen können; ein Projekt neu anlegen und verändern und löschen können. erstellen Sie die Projekte mit den Titeln 'Prüfung Entwickeln und Programmieren', 'Prüfung Administrieren' und 'Facharbeit'.
+2. Erstellen Sie mit einem scaffold 'tasks' mit den Feldern: title, description, start_date, end_date, project_id. Sowohl das Model als auch die Resource sind dem Project zugeordnet.
+Ein Projekt hat mehrere Tasks. (Orientierung an den bereits erstellten Apps). In der config/routes.rb steht dann 
+resources projects do
+  resources tasks
+end
+Führen Sie die erforderlichen Schritte durch, damit beim Anzeigen und Anlegen der Tasks immer das Projekt mit geführt wird. Sie kommen zu den Tasks eines Projekts über einen Link in der show-Seite eines Projektes.
+Es werden dann natürlich nur die Tasks angezeigt, die zu dem Projekt gehören.
+3. Erstellen Sie eine Authentifizierung. Orientieren Sie sich an einem Video von Ryan Bates: http://railscasts.com/episodes/250-authentication-from-scratch-revised . Den schriftlichen Inhalt des Videos finden Sie in der Datei: Rails_Bates_authentification.pdf.
