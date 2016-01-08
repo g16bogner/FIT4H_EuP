@@ -20,9 +20,9 @@
         <td><%= task.description %></td>
         <td><%= task.start_date %></td>
         <td><%= task.end_date %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', project_task_path(task.project_id, task.id) %></td>
+        <td><%= link_to 'Edit', edit_project_task_path(task.project_id,task.id) %></td>
+        <td><%= link_to 'Destroy', project_task_path(task.project_id,task.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'New Task', new_project_task_path(@tasks.first.project_id) %>
