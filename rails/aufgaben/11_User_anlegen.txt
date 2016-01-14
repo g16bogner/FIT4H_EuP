@@ -4,3 +4,10 @@ MOVIE - Applikation
   Zulassen, dass das bcrypt-gem greift
   Validations: name und email auf ausgefüllt überprüfen und email auf FOrmat prüfen
   2 Testuser anlegen
+
+
+  Nach dem Anlegen des User-Models wird das Web-Interface mit folgenden Funktionen implementiert:
+  - Benutzer ermöglichen einen Account anzulegen
+  - Account editieren, ansehen und löschen
+  - alle existierenden Accounts anzeigen
+

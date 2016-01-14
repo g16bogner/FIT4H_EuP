@@ -1,0 +1,5 @@
+    <% if flash.present? %>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "panel flash #{key}") %>
+      <% end %>
+    <% end %>
