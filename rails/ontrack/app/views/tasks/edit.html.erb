@@ -1,6 +1,5 @@
-<h1>Editing Task</h1>
+<h1>Editing Task von Projekt: <%= @project.title %> hinzufügen</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+ |
+<%= link_to "Alle Tasks von #{@project.title}" , project_tasks_path(@project.id) %>

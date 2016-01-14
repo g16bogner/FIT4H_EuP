@@ -15,7 +15,7 @@ class RegistrationsController < ApplicationController
 			#flash[:notice] = "Registrierung erfolgreich!"
 			redirect_to event_path(@event.id), notice: "Registrierung erfolgreich!"
 		else
-			flash[:alert] = "Penner, du musst eingeben woher du den Event kennst."
+			flash[:alert] = "Fehler beim anlegen."
 			render "new"
 		end
 	end
