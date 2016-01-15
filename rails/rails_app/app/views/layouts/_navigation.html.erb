@@ -12,7 +12,7 @@
     <ul>
     	<div class="right">
     		<% if current_user %>
-    			<li><%= link_to "logout", "#" %></li>
+    			<li><%= link_to "logout", logout_path, method: :delete %></li>
     			<li><%= link_to current_user.name, edit_user_path(current_user.id) %></li>
     		<% else %>
     			<li><%= link_to "Account neu", signup_path %></li>

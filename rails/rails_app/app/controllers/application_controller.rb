@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def require_signin
+  	unless current_user
+  		redirect_to signin_url, alert: "Erst einloggen, dann wohlfühlen."
+  	end
+  end
 end

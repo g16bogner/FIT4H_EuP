@@ -5,3 +5,8 @@ Erzeugen von Routen für eine 'singular session resource'.
 Erstellen eines SignIn-Links im Header-Bereich.
 
 Die Actions new und create des sessions-Controller und ein signin-Formular sollen dem Benutzer einen Login ermöglichen.
+
+Erzwingen SIe in der Movie-App, dass nur ein eingeloggter user die Users sehen darf.
+Der angemeldete User darf nur seinen eigenen Account ändern oder löschen.
+
+Nach der Anmeldung sollte der User zu seiner angesteuerten Seite geleitet werden.

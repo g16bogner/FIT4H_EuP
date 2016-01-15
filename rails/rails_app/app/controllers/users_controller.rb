@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_signin, except: [:new, :create]
+  before_action :require_correct_user, only: [:update, :edit, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -62,6 +63,12 @@ class UsersController < ApplicationController
   end
 
   private
+    def require_correct_user
+      @user = User.find(params[:id])
+      unless @user == current_user
+        redirect_to root_url, alert: "Finger weg, du perfider User, du!"
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
