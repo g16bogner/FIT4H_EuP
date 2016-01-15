@@ -1,0 +1,7 @@
+Login
+
+Erzeugen eines Controllers mit der Bezeichnung sessions.
+Erzeugen von Routen für eine 'singular session resource'.
+Erstellen eines SignIn-Links im Header-Bereich.
+
+Die Actions new und create des sessions-Controller und ein signin-Formular sollen dem Benutzer einen Login ermöglichen.
