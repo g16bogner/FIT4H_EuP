@@ -13,3 +13,10 @@ Der angemeldete User kann:
 Ein Admin kann:
  alles mit allen tasks machen
  er kann neue Projekte anlegen und löschen, und existierende editieren
+
+Erhöhung der Komplexität:
+Ontrack soll zu einer Projekt-User-Verwaltung erweitert werden. Es gibt drei Gruppen: den normale, angemeldeten User, den Teamleiter und den Admin.
+Der Teamleiter kann Projekte anlegen und solche editieren, die er selbst angelegt hat. Außerdem kann er einem Task einen User zuordnen. Die Tabelle tasks muss also um eine Spalte user_id erweitert werden. Ein Task hat genau einen zuständigen User, einem User können mehrere Tasks zugeordnet werden.
+Auch muss das Tasks-Formular um die Möglichkeit erweitert werden, aus den vorhandenen Usern einen auszuwählen.
+Schließlich ist eine Erweiterung der User-Show-Action sinnvoll, die die Tasks des Users listet.
+
