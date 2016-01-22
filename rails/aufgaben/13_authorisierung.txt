@@ -1,0 +1,15 @@
+ONTRACK - Projekt
+	Resourcen: Projects, Tasks, Users
+	a. Authentifizierung durch einen Login
+
+Authorisierung:
+Der nicht angemeldete User kann:
+	sich einen Account zulegen
+	alle Projekte sehen
+
+Der angemeldete User kann:
+	alle tasks sehen die für ein Projekt existieren
+
+Ein Admin kann:
+ alles mit allen tasks machen
+ er kann neue Projekte anlegen und löschen, und existierende editieren

@@ -1,0 +1,45 @@
+Rails bringt die die Voraussetzungen für eine Authentifizierung mit.
+
+Anlegen eines Users
+1. Aktivieren Sie in der Datei 'Gemfile' das Gem gem 'bcrypt', '~> 3.1.7', indem Sie das Kommentarzteichen entfernen.
+2. Im Model das für die Authentifizierung verwendet wird, in unserem Beispiel User, ist die Angabe
+	class User < ActiveRecord::Base
+  	has_secure_password
+nötig.
+Damit stehen in diesem Model verschiedene Methoden zur Verschlüsslung und zur Authentifizierung zur Verfügung.
+3. Ein zentrales Attribut in dem Model ist 'password'
+Das kann beim Anlegen  berücksichtigt werden:
+	rails g model user email password:digest
+In jedem Fall muss in der Migration für das Feld attribut die Zeile stehen:
+	t.string :password_digest
+Dieser Eintrag sorgt dafür, dass in Kombination mit 'has_secure_password' der Passworteintrag in der Tabelle verschlüsselt wird.
+4. Das Formular zum Anlegen eines Users enthält zwei Textfelder für das Passwort:
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+
+Authentifizierung:
+Neben dem Model für die Accounts wird ein Controller 'Sessions' angelegt, in dem die Authentifizierung stattfindet. 
+	rails g controller sessions new
+Der Controller hat eine Action für das Login-Formular (new-Action), eine create-Action für das Überprüfen der Logindaten und eine destroy-Action für das Ausloggen.
+Für die Authentifizierung wird eine Methode von bcrypt (user.authenticate(password)) verwendet.
+Wir haben eine eigene Klassenmethode von User mit dem Namen authenticate geschrieben, die wir im Controller aufrufen.
+	def self.authenticate(email, password)
+  	user = User.find_by(:email => email)
+  	user && user.authenticate(password)
+  end
+
+Bei einem Fehlschlagen der Authentifizierung wird in das Login-Formular zurückgeleitet.
+Bei einem erfolgreichen Authentifizieren wird eine Session-Variable angelegt.
+	session[:user_id] = user.id
+
+Diese Sessionvariable wird bei jedem Aufruf im application_controller überprüft:
+  def current_user
+  	@current_user = User.find(session[:user_id]) if session[:user_id]
+  end
+  helper_method :current_user
+
+Beim Logout eines Users wird diese Session zerstört:
+	def destroy
+		session[:user_id] = nil
+	end
+
