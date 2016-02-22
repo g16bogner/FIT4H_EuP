@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
 	has_many :registrations, dependent: :destroy
+	
 	validates :name, presence: true
 	validates :description, :length => { minimum: 25 }
 	validates :capacity, numericality: { only_integer: true, greater_than: 0}

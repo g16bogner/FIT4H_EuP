@@ -10,5 +10,14 @@
   <%= @user.email %>
 </p>
 
+<p>
+	<h3>Angemeldete Events</h3>
+	<ul>
+		<% @user.registrations.each do |registration| %>
+			<li><%= registration.event.name %></li>
+		<% end %>
+	</ul>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
