@@ -1,4 +1,15 @@
 <h1><%= @event.name %></h1>
+<% if @likers.any? %>
+	<div class="panel">
+		<h3>Likers</h3>
+		<ul>
+			<% @likers.each do |liker| %>
+				<li><%= link_to liker.name, user_path(liker.id) %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
 
 <div class="panel">
 	<div class="row">

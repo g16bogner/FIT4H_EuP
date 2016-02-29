@@ -19,5 +19,17 @@
 	</ul>
 </p>
 
+<p>
+	<% if @liked_events.any? %>
+		<h3>Meine liked Events</h3>
+		<ul>
+			<% @liked_events.each do |event| %>
+				<li><%= link_to event.name, event_path(event.id) %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

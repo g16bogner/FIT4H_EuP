@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222074850) do
+ActiveRecord::Schema.define(version: 20160229091853) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20160222074850) do
     t.string   "image_file"
     t.integer  "capacity"
   end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "likes", ["event_id"], name: "index_likes_on_event_id"
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
 
   create_table "registrations", force: :cascade do |t|
     t.string   "how_heard"

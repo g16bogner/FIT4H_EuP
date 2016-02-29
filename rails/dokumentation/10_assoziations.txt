@@ -13,3 +13,21 @@ Wenn es diese Verknüpfungen gibt, bildet Rails die zusätzlichen Methoden:
 	e = Event.find(r.event_id)
 	r.event 		#zeigt den Event zur Registration
 	e.registrations 	#zeigt die Registrierungen des Event an
+
+M zu N Beziehungen.
+Es ist möglich in Rails eine Verbindung zwischen zwei Tabellen herzustellen, die nicht mit einem Foreign-Key verbunden sind. Dazu ist allerdings eine Zwischentabelle nötig.
+Beispiel:
+Die Tabelle events ist mit der Tabelle users über die Tabelle likes verknüpft.
+class Event < ActiveRecord::Base
+	has_many :likes, dependent: :destroy
+	has_many :likers, through: :likes, source: :user
+class Like < ActiveRecord::Base
+  belongs_to :event
+  belongs_to :user
+class User < ActiveRecord::Base
+  has_many :likes, dependent: :destroy
+  has_many :liked_events, through: :likes, 
+  					source: :event
+#Zwischen der Tabelle likes und der Tabelle events gibt es eine n : 1 Beziehung; d.h. die Tabelle likes enthält eine event_id, die auf einen Datensatz der Tabelle events verweist.
+#Da es eine ebensolche Verknüpfung zwischen der Tabelle likes und users gibt, ist es möglich die Tabelle users und events über (through) die Tabelle likes zu verbinden.
+#Es ist möglich einer Beziehung eine Bezeichnung zu geben, die nicht dem Tabellenamen entspricht. Dann ist es jedoch notwendig mit source: anzugeben, auf welche Tabelle sich die Beziehung bezieht.

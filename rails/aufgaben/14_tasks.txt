@@ -1,0 +1,4 @@
+Erstellen Sie für die flix-app einen Task.
+Dieser heisst add_movies und gehört zu namespace import.
+Legen Sie eine csv-Datei mit dem Namen movies.csv an, in der für 5 Filme alle Spaltendaten durch semikolongetrennt angegeben sind.
+In dem Task wird die movies.csv geöffnet und die Daten werden in die Tabelle movies eingelesen.
