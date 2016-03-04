@@ -1,0 +1,7 @@
+In der MOVIE-App soll der Benutzer die Möglichkeit bekommen einen FIlm zu favorisieren.
+
+Eine Resource favorite wird erstellt und eine m:n Beziehung zwischen movie und user hergestellt.
+Die movie-Beziehung wird fans, die user-Beziehung favorite_movies genannt.
+
+Auf der show-Seite eines Movie werden die Fans angezeigt.
+AUf der show-Seite eines Users werdenen die Favorite_Movies angezeigt.

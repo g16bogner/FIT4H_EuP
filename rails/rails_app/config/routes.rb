@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :likes
   root "events#index"
 
   get 'signup' => "users#new"
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
   resources :users
    
   resources :events do
+    resources :likes
     resources :registrations
     collection do
       get "showall"

@@ -31,7 +31,4 @@ class RegistrationsController < ApplicationController
 		def registration_params
 			params.require(:registration).permit(:user_id, :event_id, :how_heard)
 		end
-		def set_event
-			@event = Event.find(params[:event_id])
-		end
 end

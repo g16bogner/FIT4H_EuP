@@ -14,4 +14,7 @@ class ApplicationController < ActionController::Base
   		redirect_to signin_url, alert: "Erst einloggen, dann wohlfühlen."
   	end
   end
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
 end

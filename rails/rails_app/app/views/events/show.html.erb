@@ -7,6 +7,13 @@
 				<li><%= link_to liker.name, user_path(liker.id) %></li>
 			<% end %>
 		</ul>
+		<% if current_user %>
+			<% if @current_like %>
+				<%= button_to "UNLIKE", event_like_path(@event.id, @current_like.id), method: :delete, class: "button" %>
+			<% else %>
+				<%= button_to "LIKE", event_likes_path(@event.id), class: "button" %>
+			<% end %>
+		<% end %>
 	</div>
 <% end %>
 
